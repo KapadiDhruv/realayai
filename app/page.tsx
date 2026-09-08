@@ -1,6 +1,7 @@
 'use client'
 
 import { FormEvent, useEffect, useRef, useState } from 'react'
+import { trackEvent } from '@/lib/analytics'
 
 const services = ['ChatGPT', 'Claude', 'Gemini', 'GitHub Copilot', 'Cursor', 'Other']
 
@@ -46,7 +47,7 @@ const chapters = [
 ]
 
 function track(event: string, detail?: string) {
-  if (typeof window !== 'undefined') window.dispatchEvent(new CustomEvent('relayai:analytics', { detail: { event, detail } }))
+  trackEvent(event, detail ? { label: detail } : undefined)
 }
 
 function useScrollSpy(count: number) {
@@ -115,7 +116,7 @@ export default function Page() {
 
       if (response.ok && result?.success) {
         setSubmitted(true)
-        track('waitlist_submit')
+        trackEvent('form_submit', { form_name: 'waitlist' })
       } else {
         setFormError(result?.message || 'Something went wrong. Please try again.')
       }
