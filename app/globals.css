@@ -206,6 +206,12 @@ h1, h2, h3 { font-family: var(--font-display); }
 .site-footer { display: grid; grid-template-columns: 1fr 2fr 1fr; align-items: center; min-height: 120px; gap: 30px; }
 .site-footer p { color: #88857e; font-family: var(--font-mono); font-size: 9px; line-height: 1.5; text-align: right; }
 
+/* consent banner */
+.consent-banner { position: fixed; left: 20px; right: 20px; bottom: 20px; z-index: 50; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; max-width: 720px; margin: 0 auto; padding: 18px 22px; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: 0 12px 32px rgba(32, 33, 31, .14); }
+.consent-banner p { margin: 0; max-width: 460px; color: var(--foreground); font-size: 13px; line-height: 1.5; }
+.consent-banner-actions { display: flex; gap: 10px; flex-shrink: 0; }
+.consent-banner .button { padding: 10px 18px; font-size: 13px; }
+
 @media (max-width: 900px) {
   .hero, .waitlist-section, .audience-grid, .availability-grid, .faq-grid { grid-template-columns: 1fr; gap: 40px; }
   .hero { padding-top: 70px; }

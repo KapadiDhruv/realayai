@@ -19,9 +19,16 @@ declare global {
   }
 }
 
+// Pushes straight to `dataLayer` (the same thing the standard gtag.js snippet's
+// own `function gtag(){dataLayer.push(arguments)}` shim does) instead of
+// calling `window.gtag` directly. This means calls made before gtag.js has
+// finished loading — notably the consent default set from GoogleAnalytics.tsx,
+// and any consent update a visitor triggers in that window — are queued
+// correctly rather than silently dropped.
 function gtag(...args: unknown[]) {
-  if (typeof window === 'undefined' || typeof window.gtag !== 'function') return
-  window.gtag(...args)
+  if (typeof window === 'undefined') return
+  window.dataLayer = window.dataLayer || []
+  window.dataLayer.push(args)
 }
 
 // Query params that are safe (and useful) to report to GA4. Anything not on
@@ -84,6 +91,26 @@ export function trackEvent(eventName: string, params?: GtagEventParams) {
   if (!isAnalyticsEnabled) return
   try {
     gtag('event', eventName, params)
+  } catch {
+    // Analytics must never break the app.
+  }
+}
+
+/**
+ * Updates Google Consent Mode after a visitor makes a choice in the consent
+ * banner (see components/ConsentBanner.tsx). Until this is called with
+ * "granted", GA4 runs in its consent-denied mode: no analytics cookies are
+ * set and hits are cookieless/pinged, per the default configured in
+ * GoogleAnalytics.tsx.
+ */
+export function updateConsent(choice: 'granted' | 'denied') {
+  try {
+    gtag('consent', 'update', {
+      ad_storage: choice,
+      analytics_storage: choice,
+      ad_user_data: choice,
+      ad_personalization: choice,
+    })
   } catch {
     // Analytics must never break the app.
   }
