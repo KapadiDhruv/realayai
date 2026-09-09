@@ -2,7 +2,6 @@ import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import { Inter, Space_Grotesk } from 'next/font/google'
 import { GoogleAnalytics } from '@/components/GoogleAnalytics'
-import { ConsentBanner } from '@/components/ConsentBanner'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' })
@@ -33,7 +32,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
         <GoogleAnalytics />
-        <ConsentBanner />
       </body>
     </html>
   )

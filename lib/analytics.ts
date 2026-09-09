@@ -97,26 +97,6 @@ export function trackEvent(eventName: string, params?: GtagEventParams) {
 }
 
 /**
- * Updates Google Consent Mode after a visitor makes a choice in the consent
- * banner (see components/ConsentBanner.tsx). Until this is called with
- * "granted", GA4 runs in its consent-denied mode: no analytics cookies are
- * set and hits are cookieless/pinged, per the default configured in
- * GoogleAnalytics.tsx.
- */
-export function updateConsent(choice: 'granted' | 'denied') {
-  try {
-    gtag('consent', 'update', {
-      ad_storage: choice,
-      analytics_storage: choice,
-      ad_user_data: choice,
-      ad_personalization: choice,
-    })
-  } catch {
-    // Analytics must never break the app.
-  }
-}
-
-/**
  * Reusable outbound-link click handler. Attach to any external <a> to
  * report the destination without leaking query strings that might carry
  * sensitive data.

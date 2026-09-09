@@ -40,23 +40,6 @@ export function GoogleAnalytics() {
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
 
-          // Consent Mode default: deny analytics/ad storage until the visitor
-          // opts in via the consent banner (components/ConsentBanner.tsx), per
-          // Google's guidance for EEA/UK/CH visitors. A returning visitor who
-          // already granted consent gets that choice restored immediately so
-          // the banner doesn't reset every visit. This key must match
-          // CONSENT_STORAGE_KEY in lib/consent.ts.
-          var storedConsent = null;
-          try { storedConsent = localStorage.getItem('relayai_consent'); } catch (e) {}
-          var granted = storedConsent === 'granted';
-          gtag('consent', 'default', {
-            ad_storage: granted ? 'granted' : 'denied',
-            analytics_storage: granted ? 'granted' : 'denied',
-            ad_user_data: granted ? 'granted' : 'denied',
-            ad_personalization: granted ? 'granted' : 'denied',
-            wait_for_update: 500,
-          });
-
           gtag('js', new Date());
           gtag('config', '${GA_MEASUREMENT_ID}', { send_page_view: false });
         `}

@@ -4,7 +4,7 @@
 
 > **Note on rule-checking:** Claude Code can't fetch reddit.com directly (blocked for the fetch tool), so the rule summaries below come from search-engine results about these subs' policies, not a live read of each sidebar/wiki. **Before posting, open each sub's "rules" tab yourself** and confirm flair options and any self-promo restrictions haven't changed. What's below is a solid starting point, not a guarantee of approval.
 
----
+--
 
 ## What each sub seems to actually want
 
@@ -14,14 +14,14 @@
 
 Common thread across all three: **lead with the problem and your own uncertainty, mention the product as context (not as the point), skip the hard CTA in the body, and be upfront that it's yours.** I've pulled the "Join the waitlist" push out of the post body for that reason — it's still on the landing page/screenshot, so anyone interested will find it without you having to ask.
 
----
+--
 
 ## Suggested flair
 - r/microsaas: "Show and Tell" or "Self Promo" if listed, otherwise "Discussion"
 - r/buildinpublic: "Update" or "Idea validation" if listed
 - r/EntrepreneurRideAlong: "Idea Validation" or "Story" if listed — check the actual list, don't guess
 
----
+--
 
 ## Title
 
@@ -29,32 +29,40 @@ idea: renting out the days of your Claude/ChatGPT sub you don't actually use
 
 ## Body
 
-So I pay for Claude Pro every month but realistically I'm only heads-down using it maybe half the days in any given month. The rest of the time it's just... sitting there. Same story for a bunch of friends with ChatGPT Plus, Copilot, Cursor, etc.
+I work at a LALA company, so I get staffed on whatever client needs bodies that month. A few months back that meant a Claude subscription and one instruction: "use this to clear the backlog." Two weeks later the project wrapped, I got rotated onto something slower, and the subscription just... kept running. Nobody cancels these things.
 
-Meanwhile I know people who need AI access for like a week — a project, a deadline, whatever — and don't want to pay for a full month just for that.
+**Where the idea actually came from:**
 
-So I've been sketching out something I'm calling RelayAI (yes, this is my own project, being upfront about that). Basic idea:
+- Noticed I do the same thing with my own Claude Pro — heads-down half the month, dead weight the other half
+- Same story for friends with ChatGPT Plus, Copilot, Cursor
+- Meanwhile I know people who need AI access for exactly *one* deadline and don't want to pay for a full month to get it
 
-- If you have a subscription, you pick the days/windows you're not using it and make that access available to someone else during that window
-- Someone who just needs it short-term gets temporary access for that period instead of buying a whole subscription
-- No password sharing, access just expires automatically when the window's up
-- You (the owner) stay in control the whole time — block dates, pause it, whatever
+That gap is what I've been sketching out as **RelayAI** (my own project, being upfront). The pitch:
 
-Kind of like renting out a spare room. You only actually make anything back if someone wants it during your open window — not guaranteed income, more like "turn dead time into a little bit of value instead of zero."
+- You open up the days you're *not* using your subscription
+- Someone who needs it short-term gets temporary access for that window
+- No passwords change hands
+- It just expires when time's up
 
-Right now it's just a landing page, nothing built yet (screenshot below). Wanted to get this in front of actual people before sinking more time into it because I've been wrong about "obviously useful" ideas before.
+Think renting out a spare room — you don't earn anything guaranteed, you just stop leaving dead time on the table.
 
-Genuinely curious what this sub thinks:
+**Where it's at right now:**
 
-- Would you ever open up your unused sub time, even for a few bucks?
-- Would you rather rent 3 days of someone's Claude Pro than pay full price for a month?
-- What's the obvious reason this doesn't work that I'm not seeing? (legal/ToS stuff, trust issues, etc. — lay it on me)
+- Nothing's built yet, just a clear execution plan with the actual work laid out
+- Landing page is up: [https://realayai.vercel.app/](https://realayai.vercel.app/)
+- Wanted to sanity-check the idea with actual people before sinking more time in — I've been wrong about "obviously useful" before
 
-Not asking anyone to sign up for anything, just trying to figure out if this is a real problem or just a "seemed clever at 1am" idea.
+**Genuinely asking:**
+
+- Would you ever rent out your unused sub time?
+- Would you rather grab 3 days of someone's Claude Pro than pay for a full month?
+- What's the obvious dealbreaker I'm not seeing — ToS, trust, something else?
+
+Posting this before bed, will reply to everything once I'm up.
 
 *(Not affiliated with Anthropic/OpenAI/etc — just using their pricing as an example.)*
 
----
+--
 
 ## Per-subreddit tweaks
 
@@ -64,7 +72,7 @@ Not asking anyone to sign up for anything, just trying to figure out if this is 
 
 **r/EntrepreneurRideAlong** — keep the personal "why I'm doing this" framing front and center, maybe expand the opening 2 sentences into a short paragraph about the frustration that led here. This sub responds to the story more than the mechanics.
 
----
+--
 
 ## General notes
 
